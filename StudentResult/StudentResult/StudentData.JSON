@@ -1,0 +1,27 @@
+{
+    "name":"Mohit",
+    "rollNumber":"1002",
+    "semester":"S05",
+    "course":"BTech",
+    "subjects":[
+                {
+                "subject":"C++",
+                "mark":50
+                },
+                {
+                "subject":"JAVA",
+                "mark":50
+                },
+                {
+                "subject":"Data Structure",
+                "mark":50
+                }
+                
+                ],
+    "result":{
+        "total":150,
+        "status":"Pass"
+    }
+    
+    
+}
