@@ -48,10 +48,12 @@
     AppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
     if (appDelegate.session.isOpen) {
         ViewController *successView=[[ViewController alloc]initWithNibName:@"ViewController" bundle:nil];
+        AppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
+        appDelegate.fbFlag=YES;
         [self.navigationController pushViewController:successView animated:YES];
     } else {
         // login-needed account UI is shown whenever the session is closed
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:@"Not Logged in" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:@"Logged Out" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
     }
 }

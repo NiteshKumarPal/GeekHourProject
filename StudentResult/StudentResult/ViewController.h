@@ -15,6 +15,7 @@
 @property (retain,nonatomic) IBOutlet UIButton *btnLogout;
 @property (retain,nonatomic) APIHelper *apiHelper;
 @property (retain,nonatomic) NSDictionary *stdResponce;
+@property BOOL fbFlag;
 -(IBAction)getStudentResult:(id)sender;
 -(IBAction)logOut:(id)sender;
 

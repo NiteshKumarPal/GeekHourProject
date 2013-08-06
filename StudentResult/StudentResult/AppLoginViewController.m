@@ -67,7 +67,7 @@
     NSLog(@"%@",response);
     NSString *resp=[response valueForKey:@"responce"];
     if([resp isEqualToString:@"SUCCESS"]){
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Success" message:NSLocalizedString(@"SUCCESS", nil) delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:@"Successful Login"delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
         ViewController *successView=[[ViewController alloc]initWithNibName:@"ViewController" bundle:nil];
         [self.navigationController pushViewController:successView animated:YES];

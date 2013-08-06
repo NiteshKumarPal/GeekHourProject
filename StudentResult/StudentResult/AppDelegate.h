@@ -17,4 +17,5 @@
 @property (nonatomic, retain) UINavigationController *navigationController;
 @property (strong, nonatomic) LoginViewController *loginViewController;
 @property (strong, nonatomic) FBSession *session;
+@property BOOL fbFlag;
 @end

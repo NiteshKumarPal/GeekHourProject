@@ -18,7 +18,7 @@
 @end
 
 @implementation ViewController
-@synthesize apiHelper,stdResponce,txtRollNumber,txtSemester,btnLogout,btnResult;
+@synthesize apiHelper,stdResponce,txtRollNumber,txtSemester,btnLogout,btnResult,fbFlag;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -26,10 +26,8 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    
-    [self setTitle:@"Result App"];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
-    self.navigationItem.backBarButtonItem.enabled=NO;
+  
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     [self.txtSemester resignFirstResponder];
     [self.txtSemester resignFirstResponder];
 }
@@ -65,7 +63,7 @@
 - (void)apiCallWithResponse:(id)response{
     self.stdResponce=response;
     NSLog(@"%@",self.stdResponce);
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Success" message:NSLocalizedString(@"SUCCESS", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles: nil];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:NSLocalizedString(@"API hit", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles: nil];
     [alert show];
     //mapping dictionary to object
     
