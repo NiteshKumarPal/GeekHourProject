@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Subject : NSManagedObject
+@interface Subject : NSObject
 @property (retain,nonatomic) NSString *subject;
 @property (retain,nonatomic) NSNumber *mark;
 @end

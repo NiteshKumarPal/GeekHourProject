@@ -15,7 +15,7 @@
 @property (nonatomic,retain) NSURLConnection *connection;
 @property (nonatomic,retain) NSMutableData *bufferData;
 @property (nonatomic,retain) id<APIHelperDelegate> delegate;
-@property (nonatomic,retain) MBProgressHUD *progress;
+@property (nonatomic,retain) MBProgressHUD *apiProgress;
 @property bool showProgress;
 
 - (void)apiCallWithURL:(NSString *)url withParameters:(NSString *)parameterString withLoadingText:(NSString *)text withView:(UIView *)view;

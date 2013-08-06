@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Result : NSManagedObject
+@interface Result : NSObject
 @property (retain,nonatomic) NSNumber *total;
 @property (retain,nonatomic) NSString *status;
 @end

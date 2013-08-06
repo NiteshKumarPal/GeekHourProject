@@ -13,6 +13,6 @@
 @property (retain,nonatomic) NSString *rollNumber;
 @property (retain,nonatomic) NSString *semester;
 @property (retain,nonatomic) NSString *course;
-@property (retain,nonatomic) NSMutableSet *subjects;
+@property (retain,nonatomic) NSArray *subjects;
 @property (retain,nonatomic) Result *result;
 @end

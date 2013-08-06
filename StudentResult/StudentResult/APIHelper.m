@@ -12,7 +12,7 @@
 @synthesize bufferData;
 @synthesize delegate;
 @synthesize connection;
-@synthesize progress;
+@synthesize apiProgress;
 @synthesize showProgress;
 
 -(id)init{
@@ -26,7 +26,7 @@
         [self showLoadingWithLabel:text withView:view];
     }
     
-    NSLog(@"in helper class");
+    
     if(parameterString){
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
         NSMutableData *postData=[NSMutableData data];
@@ -53,7 +53,8 @@
             self.bufferData=[[NSMutableData alloc] init];
             [self.connection start];
         }else{
-            NSLog(@"Connection failed");
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:@"Network is not available" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [alert show];
         }
     }
 }
@@ -72,7 +73,7 @@
     id jsonDictionary=[NSJSONSerialization JSONObjectWithData:self.bufferData options:0 error:nil];
     //hide loading
     if(showProgress){
-        [progress hide:YES];
+        [apiProgress hide:YES];
     }
     [delegate apiCallWithResponse:jsonDictionary];
 }
@@ -84,8 +85,8 @@
 
 
 - (void)showLoadingWithLabel:(NSString *)loadingMsg withView:(UIView *)view{
-    progress = [MBProgressHUD showHUDAddedTo:view animated:NO];
-    progress.mode = MBProgressHUDModeIndeterminate;
-    progress.labelText = loadingMsg;
+    apiProgress = [MBProgressHUD showHUDAddedTo:view animated:NO];
+    apiProgress.mode = MBProgressHUDModeIndeterminate;
+    apiProgress.labelText = loadingMsg;
 }
 @end

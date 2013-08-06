@@ -11,7 +11,7 @@
 @implementation Parser
 -(id)dictionaryToObjectMappingForObject:(id)object fromDictionary:(NSDictionary*)dict
 {
-
+    
     unsigned count,testCount;
     objc_property_t *properties = class_copyPropertyList([object class], &count);
     
@@ -27,7 +27,6 @@
             //for composite objects
             if(testCount>1){
                 test1Obj=[self dictionaryToObjectMappingForObject:test1Obj fromDictionary:[dict objectForKey:key]];
-                //NSLog(@"%@",test);
                 [object setValue:test1Obj forKey:key];
                 continue;
             }
@@ -50,13 +49,11 @@
                 }
                 
                 for(int i = 0 ;i < arrCount ; i++){
-                    //Class modelClass=[[test2Obj objectAtIndex:0] class];
                     id tempobj=[[modelClass alloc]init];
                     id obj=[self dictionaryToObjectMappingForObject:tempobj fromDictionary:[testDictArr objectAtIndex:i]];
                     [objectArr addObject:obj];
                 }
                 
-                //NSLog(@"the array of dictinary is :-%@",testDictArr);
                 [object setValue:objectArr forKey:key];
                 continue;
             }

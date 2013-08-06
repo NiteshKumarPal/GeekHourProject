@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "LoginViewController.h"
 @class ViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
@@ -15,6 +15,6 @@
 @property (strong, nonatomic) UIWindow *window;
 
 @property (nonatomic, retain) UINavigationController *navigationController;
-@property (strong, nonatomic) ViewController *viewController;
-
+@property (strong, nonatomic) LoginViewController *loginViewController;
+@property (strong, nonatomic) FBSession *session;
 @end

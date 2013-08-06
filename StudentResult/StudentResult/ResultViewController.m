@@ -27,6 +27,7 @@
 {
     [super viewDidLoad];
     [self setTitle:@"Student Result"];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -43,8 +44,8 @@
     for(int i=0;i<[resultStudent.subjects count];i++){
         heightSpace=(30+heightSpace);
     UILabel *lblsubjectName=[[UILabel alloc]initWithFrame:CGRectMake(27, heightSpace, 126, 21)];
-        NSArray *subArr=[NSArray arrayWithObject:resultStudent.subjects];
-        Subject *sub=[subArr objectAtIndex:i];
+        //NSArray *subArr=[NSArray arrayWithObject:resultStudent.subjects];
+        Subject *sub=[resultStudent.subjects objectAtIndex:i];
         lblsubjectName.text=sub.subject;
         [[self view] addSubview:lblsubjectName];
     UILabel *lblMarks=[[UILabel alloc]initWithFrame:CGRectMake(180, heightSpace, 126, 21)];
