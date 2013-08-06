@@ -26,7 +26,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-  
+    
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     [self.txtSemester resignFirstResponder];
     [self.txtSemester resignFirstResponder];
@@ -71,7 +71,6 @@
     Result *studentResult=[[Result alloc]init];
     student.result=studentResult;
     Subject *sub=[[Subject alloc]init];
-    
     student.subjects=[NSArray arrayWithObjects:sub, nil];
     
     Parser *parser=[[Parser alloc]init];
