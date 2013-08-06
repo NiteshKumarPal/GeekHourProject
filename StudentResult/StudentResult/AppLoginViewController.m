@@ -49,10 +49,10 @@
 }
 
 -(IBAction)appLoginAction:(id)sender{
-    NSString *userName=txtUserName.text;
-    NSString *password=txtPassword.text;
+    NSString *userName=[txtUserName.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    NSString *password=[txtPassword.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     NSString *requestString = [NSString stringWithFormat:@"username=%@&password=%@",userName,password];
-    if([txtUserName.text isEqualToString:@""]||[txtPassword.text isEqualToString:@""]){
+    if([userName isEqualToString:@""]||[password isEqualToString:@""]){
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:@"Please Enter Username and Password" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
     }else{
