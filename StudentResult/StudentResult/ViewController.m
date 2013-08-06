@@ -26,7 +26,6 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     [self.txtSemester resignFirstResponder];
     [self.txtSemester resignFirstResponder];
@@ -51,7 +50,7 @@
 
 #pragma -get Student Result
 -(IBAction)getStudentResult:(id)sender{
-    NSString *rollNumber=txtRollNumber.text;
+     NSString *rollNumber=txtRollNumber.text;
     NSString *semester=txtSemester.text;
     NSString *requestString = [NSString stringWithFormat:@"rollNum=%@&sem=%@",rollNumber,semester];
     apiHelper=[[APIHelper alloc]init];
