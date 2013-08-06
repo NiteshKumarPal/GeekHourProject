@@ -58,7 +58,7 @@
     }else{
     APIHelper *apiHelper=[[APIHelper alloc]init];
     //apiHelper.showProgress=NO;
-    [apiHelper apiCallWithURL:APP_URL withParameters:requestString withLoadingText:@"Loading" withView:self.view];
+        [apiHelper apiCallWithURL:@"http://localhost:8888/login.php" withParameters:requestString withLoadingText:@"Loading" withView:self.view];
     apiHelper.delegate = self;
     }
 }
@@ -79,7 +79,7 @@
 }
 
 - (void)apiCallWithError:(NSError *)error{
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Data not saved" delegate:self cancelButtonTitle:@"OK"otherButtonTitles: nil];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Internet connection is not available" delegate:self cancelButtonTitle:@"OK"otherButtonTitles: nil];
     [alert show];
 }
 

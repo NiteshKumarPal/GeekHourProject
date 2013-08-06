@@ -18,7 +18,7 @@
 @end
 
 @implementation ViewController
-@synthesize apiHelper,stdResponce,txtRollNumber,txtSemester,btnLogout,btnResult,fbFlag;
+@synthesize apiHelper,stdResponce,txtRollNumber,txtSemester,btnLogout,btnResult,rollNumber,semester;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -51,19 +51,40 @@
 
 #pragma -get Student Result
 -(IBAction)getStudentResult:(id)sender{
-    NSString *rollNumber=txtRollNumber.text;
-    NSString *semester=txtSemester.text;
+    rollNumber=txtRollNumber.text;
+    semester=txtSemester.text;
     NSString *requestString = [NSString stringWithFormat:@"rollNum=%@&sem=%@",rollNumber,semester];
     apiHelper=[[APIHelper alloc]init];
-    [apiHelper apiCallWithURL:RESULT_URL withParameters:requestString withLoadingText:@"Loading" withView:self.view];
+    [apiHelper apiCallWithURL:@"http://localhost:8888/StudentData.JSON" withParameters:requestString withLoadingText:@"Loading" withView:self.view];
     apiHelper.delegate=self;
 }
 
 #pragma -APIHelperDelegate
 - (void)apiCallWithResponse:(id)response{
-    self.stdResponce=response;
+    int arrDictCount=[response count];
+    //"name":"Mohit",
+    //"rollNumber":"1002",
+    NSLog(@"%@",rollNumber);
+    NSLog(@"%@",semester);
+    int flag=0;
+    for (int i=0; i<arrDictCount; i++) {
+        NSDictionary *dict=[response objectAtIndex:i];
+        if([[dict valueForKey:@"rollNumber"] isEqualToString:self.rollNumber]&&[[dict valueForKey:@"semester"] isEqualToString:self.semester]){
+            self.stdResponce=dict;
+            NSLog(@"%@",self.stdResponce);
+            flag=1;
+            break;
+        }
+    }
+        if(!flag){
+            NSLog(@"%@",self.stdResponce);
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:@"RollNo and Semester is not available" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [alert show];
+            return;
+        }
+    
     NSLog(@"%@",self.stdResponce);
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:NSLocalizedString(@"API hit", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles: nil];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:@"API hit" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
     [alert show];
     //mapping dictionary to object
     

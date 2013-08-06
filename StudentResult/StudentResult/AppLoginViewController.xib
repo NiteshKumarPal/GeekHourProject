@@ -51,21 +51,20 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<string key="IBUIText">UserName</string>
-						<object class="NSColor" key="IBUITextColor" id="693150245">
+						<object class="NSColor" key="IBUITextColor" id="23076169">
 							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MCAwIDAAA</bytes>
-							<string key="IBUIColorCocoaTouchKeyPath">darkTextColor</string>
+							<bytes key="NSRGB">MSAxIDEAA</bytes>
 						</object>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">0</int>
 						<int key="IBUITextAlignment">1</int>
-						<object class="IBUIFontDescription" key="IBUIFontDescription" id="339224165">
+						<object class="IBUIFontDescription" key="IBUIFontDescription" id="614993588">
 							<int key="type">1</int>
-							<double key="pointSize">13</double>
+							<double key="pointSize">15</double>
 						</object>
-						<object class="NSFont" key="IBUIFont" id="61138983">
+						<object class="NSFont" key="IBUIFont" id="422670704">
 							<string key="NSName">Helvetica</string>
-							<double key="NSSize">13</double>
+							<double key="NSSize">15</double>
 							<int key="NSfFlags">16</int>
 						</object>
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
@@ -83,12 +82,12 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<string key="IBUIText">Password</string>
-						<reference key="IBUITextColor" ref="693150245"/>
+						<reference key="IBUITextColor" ref="23076169"/>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">0</int>
 						<int key="IBUITextAlignment">1</int>
-						<reference key="IBUIFontDescription" ref="339224165"/>
-						<reference key="IBUIFont" ref="61138983"/>
+						<reference key="IBUIFontDescription" ref="614993588"/>
+						<reference key="IBUIFont" ref="422670704"/>
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 					</object>
 					<object class="IBUITextField" id="830999911">
@@ -192,9 +191,8 @@
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
-					<int key="NSColorSpace">3</int>
-					<bytes key="NSWhite">MQA</bytes>
-					<reference key="NSCustomColorSpace" ref="93972186"/>
+					<int key="NSColorSpace">2</int>
+					<bytes key="NSRGB">MC41ODgyMzUzMTg3IDAuNzIxNTY4NjQ0IDAuOTE3NjQ3MTIzMwA</bytes>
 				</object>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
 				<object class="IBUIScreenMetrics" key="IBUISimulatedDestinationMetrics">
@@ -819,20 +817,17 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">AppLoginViewController</string>
 					<string key="superclassName">UIViewController</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="AppBack:">id</string>
-						<string key="appLoginAction:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="AppBack:">
-							<string key="name">AppBack:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="appLoginAction:">
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">appLoginAction:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">appLoginAction:</string>
+						<object class="IBActionInfo" key="NS.object.0">
 							<string key="name">appLoginAction:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-					</dictionary>
+					</object>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="btnLogin">UIButton</string>
 						<string key="txtPassword">UITextField</string>

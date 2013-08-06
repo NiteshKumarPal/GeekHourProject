@@ -13,9 +13,10 @@
 @property (retain,nonatomic) IBOutlet UITextField *txtSemester;
 @property (retain,nonatomic) IBOutlet UIButton *btnResult;
 @property (retain,nonatomic) IBOutlet UIButton *btnLogout;
+@property (retain,nonatomic) NSString *rollNumber;
+@property (retain,nonatomic) NSString *semester;
 @property (retain,nonatomic) APIHelper *apiHelper;
 @property (retain,nonatomic) NSDictionary *stdResponce;
-@property BOOL fbFlag;
 -(IBAction)getStudentResult:(id)sender;
 -(IBAction)logOut:(id)sender;
 
